@@ -16,3 +16,8 @@ header {
   .lista a:hover {
     text-decoration: underline;
     text-decoration-color: rgba(0, 0, 0, 0.8); }
+
+.hook {
+  font-size: 14px;
+  color: orange;
+  font-weight: bold; }

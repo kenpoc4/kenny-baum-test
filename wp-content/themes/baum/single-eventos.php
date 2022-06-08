@@ -14,6 +14,7 @@
             <?php   endwhile; 
         endif;
     ?>
+    <div class="container-hook"></div>
 </div>
 
 <?php get_footer(  ); ?>
