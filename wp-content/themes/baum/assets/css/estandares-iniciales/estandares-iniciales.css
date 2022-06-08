@@ -1,0 +1,29 @@
+/* Estandares establecidos para mayor comodidad */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* Establecemos que -> 10px = 1rem */
+}
+body {
+    font-size: 16px; 
+    font-size: 1.6rem; 
+    line-height: 2;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+figure {
+    margin: 0rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
