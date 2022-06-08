@@ -51,7 +51,8 @@ function baumTest_eventos_post_type(  ) {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'rewrite'               => true,
-		'show_in_rest'          => true
+		'show_in_rest'          => true,
+		'rest_base'				=> 'eventos-api'
 	);
 	register_post_type( 'eventos', $args );
 
@@ -59,19 +60,33 @@ function baumTest_eventos_post_type(  ) {
 add_action( 'init', 'baumTest_eventos_post_type', 0 );
 
 // Taxonomia para el post-type artistas
-function baumTest_taxonomy_artistas(){
-    $labels = [
-        'name'              => __('Artistas'),
-        'singular_name'     => __('Artista'),
-    ];
-    $args = [
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => ['slug' => 'artistas'],
-    ];
-register_taxonomy('artistas', ['eventos'], $args);
+function baumTest_taxonomy_artistas() {
+
+	$labels = array(
+		'name'              => _x( 'Artistas', 'taxonomy general name', 'baumTest' ),
+		'singular_name'     => _x( 'Artistas', 'taxonomy singular name', 'baumTest' ),
+		'search_items'      => __( 'Buscar Artista', 'baumTest' ),
+		'all_items'         => __( 'Todos los Artistas', 'baumTest' ),
+		'parent_item'       => __( 'Artista Padre', 'baumTest' ),
+		'parent_item_colon' => __( 'Artista:', 'baumTest' ),
+		'edit_item'         => __( 'Editar Artista', 'baumTest' ),
+		'update_item'       => __( 'Actualizar Artista', 'baumTest' ),
+		'add_new_item'      => __( 'Agregar Artista', 'baumTest' ),
+		'new_item_name'     => __( 'Nuevo Artistas ', 'baumTest' ),
+		'menu_name'         => __( 'Artistas', 'baumTest' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'artistas' ),
+		'show_in_rest'      => true,
+		'rest_base'	  		=> 'artistas-api'
+	);
+
+	register_taxonomy( 'artistas', array( 'eventos' ), $args );
 }
-add_action('init', 'baumTest_taxonomy_artistas');
+add_action( 'init', 'baumTest_taxonomy_artistas', 0 );
