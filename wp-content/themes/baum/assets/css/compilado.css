@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  header img {
+    max-width: 200px; }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  min-width: 325px;
+  margin: 0 auto; }
+
+.lista a {
+  color: rgba(0, 0, 0, 0.8); }
+  .lista a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.8); }
